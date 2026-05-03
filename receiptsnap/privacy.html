@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ReceiptSnap by Roam — Privacy Policy</title>
+<meta name="robots" content="index,follow">
+<style>
+:root {
+  --fg: #1a1a1a;
+  --muted: #555;
+  --bg: #ffffff;
+  --accent: #0066cc;
+  --rule: #e6e6e6;
+  --code-bg: #f4f4f4;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --fg:#eee; --muted:#aaa; --bg:#111; --accent:#6cb6ff; --rule:#333; --code-bg:#1d1d1d; }
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); color: var(--fg); }
+body { font: 16px/1.6 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif; }
+main { max-width: 720px; margin: 0 auto; padding: 32px 20px 64px; }
+nav.crumbs { font-size: 13px; color: var(--muted); margin-bottom: 12px; }
+nav.crumbs a { color: var(--muted); }
+h1 { font-size: 28px; line-height: 1.2; margin: 8px 0 24px; }
+h2 { font-size: 20px; margin: 32px 0 12px; padding-bottom: 6px; border-bottom: 1px solid var(--rule); }
+h3 { font-size: 16px; margin: 24px 0 8px; }
+p, li { color: var(--fg); }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+table { border-collapse: collapse; width: 100%; margin: 16px 0; font-size: 14px; }
+th, td { padding: 8px 10px; text-align: left; border: 1px solid var(--rule); vertical-align: top; }
+th { background: var(--code-bg); }
+code { background: var(--code-bg); padding: 1px 5px; border-radius: 3px; font: 13px/1.4 ui-monospace, "SF Mono", Menlo, Consolas, monospace; }
+pre { background: var(--code-bg); padding: 12px 14px; border-radius: 6px; overflow-x: auto; }
+pre code { background: none; padding: 0; }
+hr { border: 0; border-top: 1px solid var(--rule); margin: 32px 0; }
+footer { font-size: 12px; color: var(--muted); margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--rule); }
+em { color: var(--muted); font-style: normal; }
+blockquote { border-left: 3px solid var(--rule); margin: 16px 0; padding: 4px 16px; color: var(--muted); }
+</style>
+</head>
+<body>
+<main>
+<nav class="crumbs"><a href="/apps-legal/">Roam HPU Apps — Legal</a></nav>
+<h1>Privacy Policy — ReceiptSnap by Roam</h1>
+<p><strong>Effective date:</strong> 2026-05-02
+<strong>Last updated:</strong> 2026-05-02</p>
+<p>This is the privacy policy for <strong>ReceiptSnap by Roam</strong> ("ReceiptSnap", "we", "us"), an iPhone application published by Roam HPU.</p>
+<p>The short version: <strong>we do not collect any personal data.</strong> ReceiptSnap runs entirely on your device. There is no ReceiptSnap account, no ReceiptSnap server, no analytics SDK, and no advertising network embedded in the app. Receipt images and the metadata extracted from them stay on your device.</p>
+<p>The rest of this document explains that in detail.</p>
+<h2>1. Information we do not collect</h2>
+<p>We do not collect, transmit, store, sell, or share any of the following:</p>
+<ul>
+<li>Personal information (name, email, address, phone, identifiers)</li>
+<li>Account information (because we do not have user accounts)</li>
+<li>Receipt images, transaction amounts, vendor names, or any other content you create or capture in the app</li>
+<li>Photos from your photo library beyond the moment you choose to import a receipt</li>
+<li>Camera frames beyond the moment you capture a receipt</li>
+<li>Location data beyond the in-memory coordinate used by the local-currency suggestion</li>
+<li>Device identifiers (IDFA, IDFV, advertising IDs)</li>
+<li>Crash reports, analytics events, telemetry, usage statistics</li>
+<li>Diagnostic logs</li>
+</ul>
+<p>There is no remote endpoint that ReceiptSnap connects to for any of the above.</p>
+<h2>2. Information that stays on your device</h2>
+<p>ReceiptSnap creates and stores the following information <strong>on your iPhone, in your private app storage</strong>, and does not transmit it elsewhere:</p>
+<ul>
+<li><strong>Receipt images</strong> — saved to the application's storage directory.</li>
+<li><strong>Receipt metadata</strong> — date, vendor, amount, currency, description, category, filename — saved in the app's local SwiftData store.</li>
+<li><strong>Settings</strong> — your filename pattern preference, save location, and other preferences — saved in standard <code>UserDefaults</code>.</li>
+</ul>
+<p>If you have iCloud Backup enabled for your iPhone in iOS Settings, this data may be included in your iCloud Backup, which is governed by Apple's iCloud terms and privacy policy. ReceiptSnap itself does not use iCloud, CloudKit, or any other sync service.</p>
+<h2>3. Permissions we ask for and why</h2>
+<table>
+<thead>
+<tr>
+<th>iOS permission</th>
+<th>Why we ask</th>
+<th>What we do with it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Camera</strong></td>
+<td>To capture a paper receipt when you tap "Add receipt".</td>
+<td>We pass the image to Apple's on-device Vision framework for OCR, then save the image and extracted text on your device. We do not transmit the image.</td>
+</tr>
+<tr>
+<td><strong>Photos</strong></td>
+<td>To import an existing receipt photo.</td>
+<td>We read only the photo you pick. We do not enumerate, scan, or upload your photo library.</td>
+</tr>
+<tr>
+<td><strong>Location (when in use, optional)</strong></td>
+<td>To suggest a local currency when you save a receipt (e.g. AUD in Australia).</td>
+<td>We use a coarse one-shot location read, derive a currency code, cache that code locally, and discard the coordinate. Location is never transmitted. You can deny this and pick the currency manually with no loss of functionality.</td>
+</tr>
+</tbody>
+</table>
+<p>You can revoke any of these permissions in iOS Settings at any time. The app will continue to work with reduced auto-fill convenience.</p>
+<h2>4. Required reason API declarations</h2>
+<p>iOS requires apps to declare why they use certain "required-reason" APIs. ReceiptSnap declares:</p>
+<ul>
+<li><code>UserDefaults</code> — to persist your settings on your device. (Reason CA92.1)</li>
+<li>File timestamps — to sort and display your receipts by date. (Reason C617.1)</li>
+</ul>
+<p>Both are local-only uses. The full declarations are in the app's <code>PrivacyInfo.xcprivacy</code> manifest, which is reviewable by Apple at submission.</p>
+<h2>5. Third parties</h2>
+<p>ReceiptSnap does not embed:</p>
+<ul>
+<li>Advertising SDKs</li>
+<li>Analytics SDKs (no Firebase, no Mixpanel, no Amplitude, no nothing)</li>
+<li>Crash reporters (no Sentry, no Crashlytics)</li>
+<li>A/B testing SDKs</li>
+<li>Social network SDKs</li>
+</ul>
+<p>ReceiptSnap uses Apple's first-party frameworks (Vision, SwiftUI, SwiftData, CoreLocation, Foundation) which run on your device. These are governed by Apple's privacy policy, not ours.</p>
+<h2>6. Children</h2>
+<p>ReceiptSnap is rated 4+ and is suitable for general audiences. We do not knowingly collect data from children — because we do not collect data from anyone.</p>
+<h2>7. Your rights</h2>
+<p>Because no personal data leaves your device, there is no copy of your data we hold to provide, correct, or delete. The data lives on your iPhone and is yours.</p>
+<p>To delete all ReceiptSnap data: delete the app from your iPhone. iOS removes the app's storage along with it.</p>
+<p>To export your data: use your iCloud Backup or iTunes/Finder backup; or use the in-app export feature when available.</p>
+<p>If you have a question about your data, email <strong>ben.lewis@roamhpu.co</strong>.</p>
+<h2>8. Changes to this policy</h2>
+<p>If we ever change what ReceiptSnap collects, we will update this page and the effective date at the top, and we will surface the change in-app at next launch. We do not anticipate changing this policy, because the design intent is to keep collecting nothing.</p>
+<h2>9. Contact</h2>
+<p>Roam HPU
+ben.lewis@roamhpu.co</p>
+<hr />
+<p><em>This policy is for the iPhone app "ReceiptSnap by Roam" with bundle identifier <code>com.roamhpu.ReceiptSnap</code>.</em></p>
+<footer>© 2026 Roam — Human Potential Unleashed Pty Ltd. ABN 58 663 682 906.</footer>
+</main>
+</body>
+</html>

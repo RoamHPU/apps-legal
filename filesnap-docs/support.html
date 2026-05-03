@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FileSnap Docs by Roam — Support</title>
+<meta name="robots" content="index,follow">
+<style>
+:root {
+  --fg: #1a1a1a;
+  --muted: #555;
+  --bg: #ffffff;
+  --accent: #0066cc;
+  --rule: #e6e6e6;
+  --code-bg: #f4f4f4;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --fg:#eee; --muted:#aaa; --bg:#111; --accent:#6cb6ff; --rule:#333; --code-bg:#1d1d1d; }
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); color: var(--fg); }
+body { font: 16px/1.6 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif; }
+main { max-width: 720px; margin: 0 auto; padding: 32px 20px 64px; }
+nav.crumbs { font-size: 13px; color: var(--muted); margin-bottom: 12px; }
+nav.crumbs a { color: var(--muted); }
+h1 { font-size: 28px; line-height: 1.2; margin: 8px 0 24px; }
+h2 { font-size: 20px; margin: 32px 0 12px; padding-bottom: 6px; border-bottom: 1px solid var(--rule); }
+h3 { font-size: 16px; margin: 24px 0 8px; }
+p, li { color: var(--fg); }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+table { border-collapse: collapse; width: 100%; margin: 16px 0; font-size: 14px; }
+th, td { padding: 8px 10px; text-align: left; border: 1px solid var(--rule); vertical-align: top; }
+th { background: var(--code-bg); }
+code { background: var(--code-bg); padding: 1px 5px; border-radius: 3px; font: 13px/1.4 ui-monospace, "SF Mono", Menlo, Consolas, monospace; }
+pre { background: var(--code-bg); padding: 12px 14px; border-radius: 6px; overflow-x: auto; }
+pre code { background: none; padding: 0; }
+hr { border: 0; border-top: 1px solid var(--rule); margin: 32px 0; }
+footer { font-size: 12px; color: var(--muted); margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--rule); }
+em { color: var(--muted); font-style: normal; }
+blockquote { border-left: 3px solid var(--rule); margin: 16px 0; padding: 4px 16px; color: var(--muted); }
+</style>
+</head>
+<body>
+<main>
+<nav class="crumbs"><a href="/apps-legal/">Roam HPU Apps — Legal</a></nav>
+<h1>FileSnap Docs by Roam — Support</h1>
+<p>A short page. We're a small team, and FileSnap Docs is designed to be the kind of app you don't need much support for. If something's wrong, email us — we read every message.</p>
+<p><strong>Contact:</strong> ben.lewis@roamhpu.co</p>
+<hr />
+<h2>Common questions</h2>
+<h3>Where do my documents go?</h3>
+<p>They live on your iPhone, in FileSnap Docs's private app storage. They are not uploaded anywhere — there is no FileSnap Docs server. If you have iCloud Backup enabled in iOS Settings, your documents are included in that backup along with the rest of your phone's data.</p>
+<h3>How do I move my documents to my computer?</h3>
+<p>Tap a document → tap the share button (top right) to share it via AirDrop, Mail, the Files app, or any other share-target. For a batch, use the toolbar export button on the home screen — multi-select documents, set a password, and you'll get an encrypted ZIP bundle to share.</p>
+<h3>Why does the OCR sometimes get the issuer or type wrong?</h3>
+<p>OCR on photos of paper documents is hard. Crumpled, faded, low-light, or unusually formatted documents can be misread. The Confirm screen lets you correct any field before saving — your edit replaces the auto-detection. If a particular issuer is consistently misread (a government department, a recurring insurer), email us a sample and we'll improve it.</p>
+<h3>Can I scan multi-page documents?</h3>
+<p>Yes. Open the camera, capture page 1, capture page 2, and so on. Tap <strong>Done</strong> when finished. You'll be prompted to confirm the document fields, then choose <strong>PDF</strong> (single multi-page file) or <strong>JPG</strong> (one file per page) when saving.</p>
+<h3>How do expiry reminders work?</h3>
+<p>When you save a document with an expiry date (or add one later), the detail view shows an <strong>Add expiry reminder</strong> button. Tap it, pick how far in advance you want to be reminded, and FileSnap Docs creates a calendar event in your default iOS Calendar. You'll get a notification when the event fires. The event lives in your calendar — not on our server (we don't have one).</p>
+<p>If you don't grant Calendar permission, the reminder feature is unavailable but everything else works normally.</p>
+<h3>What's the encrypted ZIP export?</h3>
+<p>When you need to share a set of documents securely (e.g. with an accountant or a family member), use the toolbar export button:</p>
+<ol>
+<li>Multi-select the documents.</li>
+<li>Enter a password (twice).</li>
+<li>Tap Export.</li>
+</ol>
+<p>You get a <code>.zip.enc</code> bundle. The recipient needs FileSnap Docs (or, in a future update, a standard ZIP-compatible AES tool) and the password to decrypt it. <strong>We don't see the password and we can't recover it.</strong> If you forget it, the bundle is unrecoverable.</p>
+<h3>Does FileSnap Docs need an internet connection?</h3>
+<p>No. Everything happens on your iPhone. Airplane mode is fine.</p>
+<h3>Is there a subscription?</h3>
+<p>No. FileSnap Docs is a one-time purchase. You own it. Future updates are included.</p>
+<h3>How do I rename existing documents after changing the filename pattern?</h3>
+<p>Settings → File Naming → change the preset → tap <strong>Yes, rename existing</strong> when prompted. FileSnap Docs will run through your archive and re-name every file using the new pattern. An audit log is saved alongside your documents so you can see exactly what was renamed.</p>
+<h3>Can I write my own filename pattern?</h3>
+<p>Yes. Settings → File Naming → choose <strong>Custom</strong> → use tokens like <code>{date}</code>, <code>{issuer}</code>, <code>{title}</code>, <code>{type}</code>, <code>{tags}</code> in the order you want.</p>
+<h3>What about iPad?</h3>
+<p>The app supports iPad. iPhone is currently the primary surface; if you have iPad-specific feedback, email us.</p>
+<h3>I lost my data after reinstalling. Can you help?</h3>
+<p>If you deleted the app, iOS removed its data. The only way to recover is from an iCloud or Finder/iTunes backup taken before the deletion. Because we don't have a server, we can't restore your archive remotely — that's the trade-off for keeping everything private.</p>
+<h3>Is there a Mac, Android, or web version?</h3>
+<p>Not at this time. iPhone (and iPad) only.</p>
+<hr />
+<h2>Reporting a bug</h2>
+<p>Email <strong>ben.lewis@roamhpu.co</strong> with:</p>
+<ol>
+<li>What you were doing when it happened.</li>
+<li>What you expected to happen.</li>
+<li>What actually happened.</li>
+<li>Your iOS version and iPhone model (Settings → General → About).</li>
+<li>The FileSnap Docs version (Settings → bottom of the page, when implemented; otherwise just say "latest").</li>
+</ol>
+<p>If a particular document is mis-parsed, attach a redacted copy. We treat every report as a chance to make the OCR smarter.</p>
+<h2>Feature requests</h2>
+<p>Same address. We can't promise to build everything, but we read every request.</p>
+<hr />
+<p>© 2026 Roam HPU</p>
+<footer>© 2026 Roam — Human Potential Unleashed Pty Ltd. ABN 58 663 682 906.</footer>
+</main>
+</body>
+</html>
