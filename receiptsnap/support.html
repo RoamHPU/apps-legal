@@ -45,37 +45,44 @@ blockquote { border-left: 3px solid var(--rule); margin: 16px 0; padding: 4px 16
 <main>
 <nav class="crumbs"><a href="/apps-legal/">Roam HPU Apps — Legal</a></nav>
 <h1>ReceiptSnap by Roam — Support</h1>
+<p><strong>Last updated:</strong> 2026-11-06</p>
+<blockquote>
+<p><strong>Updated 6 November 2026.</strong> We corrected our <a href="privacy.html">Privacy Policy</a> and <a href="terms.html">Terms of Use</a>. Both now explain the save folder you can pick in the app's Settings, such as one in iCloud Drive. The Privacy Policy also explains the copy of each receipt's details kept inside its image, the public exchange-rate file the app downloads, and the location lookup it asks Apple for if you allow location. What the app collects has not changed: it still sends us none of your data. Several answers below have changed too, including where receipts go, moving them to a computer, internet use, permissions, reinstalling and other versions.</p>
+</blockquote>
 <p>A short page. We're a small team, and ReceiptSnap is designed to be the kind of app you don't need much support for. If something's wrong, email us — we read every message.</p>
 <p><strong>Contact:</strong> ben.lewis@roamhpu.co</p>
 <hr />
 <h2>Common questions</h2>
 <h3>Where do my receipts go?</h3>
-<p>They live on your iPhone, in ReceiptSnap's private app storage. They are not uploaded anywhere — there is no ReceiptSnap server. If you have iCloud Backup enabled in iOS Settings, the receipts are included in that backup along with the rest of your phone's data.</p>
+<p>By default they're saved on your iPhone, in ReceiptSnap's private app storage, which the Files app can't show. There is no ReceiptSnap server, and the app never uploads your receipts. If you have iCloud Backup enabled in iOS Settings, the receipts are included in that backup along with the rest of your phone's data.</p>
+<p>To keep the files somewhere you can open them, such as iCloud Drive, tap the gear icon at the top right, then <strong>Save location</strong> → <strong>Choose folder…</strong>, and pick a folder. New receipt images are saved there, and ReceiptSnap copies the images kept in its private storage into it (the originals stay there). The receipt list and its details stay in the app on your iPhone, and don't sync to your other devices. Each image also carries a copy of the details it was saved with. To go back, tap <strong>Reset to default (private)</strong>. Receipts saved while a folder was set keep their images in that folder, and nothing copies them when you reset or switch to another folder. The app can't show those images until you pick that folder again.</p>
+<p>Deleting a receipt deletes its image only where the app is saving now. If the receipt was saved while the app was using private storage, the original stays there, and the app copies it back into the folder the next time it starts. Images renamed in bulk come back under their old names the same way.</p>
+<p>If the folder is renamed, moved or deleted, the app can lose track of it. It then goes back to saving in private storage, without telling you, and can't show images saved in the folder until you pick the folder again. When this has happened, Settings shows <strong>Private (App-only)</strong> as the save location.</p>
 <h3>How do I move my receipts to my computer?</h3>
-<p>The easiest way is the in-app share/export action on a receipt or batch. You can also restore an iCloud or Finder/iTunes backup to a new device, and your archive comes with it.</p>
+<p>Pick a save folder first, for example in iCloud Drive: tap the gear icon, then <strong>Save location</strong> → <strong>Choose folder…</strong>. New receipts are saved there as image files you can open in the Files app, and ReceiptSnap copies the receipt images kept in its private storage there too. If the folder is in iCloud Drive, you can open the files on a Mac or PC signed in to iCloud Drive with the same Apple Account. You can also export a BAS quarter or a financial year as one ZIP (the box icon at the top of the home screen) and share it from the app. Check the count it shows, because a receipt whose image can't be found is left out. There is no share button for a single receipt.</p>
 <h3>Why does the OCR sometimes get the amount or vendor wrong?</h3>
-<p>OCR on small, crumpled, or low-light receipts is hard. The Confirm screen flags any field the parser couldn't anchor with high confidence using a yellow marker. Tap the field and edit — your edit replaces the auto-detection. If you see the same vendor consistently misread, email us a sample (with anything sensitive blacked out) and we'll improve it.</p>
+<p>OCR on small, crumpled, or low-light receipts is hard. On the Confirm screen, a coloured dot next to the vendor, date or amount means the app wasn't sure of it. Amber means it made a best guess, and red means it found nothing. GST doesn't get a dot, so always check it. Tap the field and edit it, and your edit replaces the auto-detection. If you see the same vendor consistently misread, email us a sample (with anything sensitive blacked out) and we'll improve it.</p>
 <h3>Does ReceiptSnap need an internet connection?</h3>
-<p>No. The OCR runs on your iPhone using Apple's Vision framework. The app has no networking code. Airplane mode is fine.</p>
+<p>No. The OCR runs on your iPhone using Apple's Vision framework, and you can scan and save receipts to your iPhone with no connection. Aeroplane mode is fine. ReceiptSnap never uploads your receipts. While you confirm a receipt, it may download the European Central Bank's public exchange-rate file for a currency estimate. The request carries none of your receipts or their details, but like any web request it shows the European Central Bank your internet (IP) address. If you allow location, opening the currency list also asks Apple which country you are in.</p>
 <h3>What permissions does ReceiptSnap ask for and why?</h3>
 <ul>
-<li><strong>Camera</strong> — to snap a paper receipt.</li>
-<li><strong>Photos</strong> — only when you pick a receipt photo to import. We don't enumerate or scan your library.</li>
-<li><strong>Location</strong> — optional, used only to suggest the local currency on the Confirm screen. You can deny this and set the currency manually.</li>
+<li><strong>Camera</strong>: to snap a paper receipt.</li>
+<li><strong>Photos</strong>: only when you pick a receipt photo to import. We don't enumerate or scan your library.</li>
+<li><strong>Location</strong>: optional, used only to suggest the local currency when you open the currency list while confirming or editing a receipt. If you allow it, the app asks Apple which country you are in. You can deny this and set the currency manually.</li>
 </ul>
 <p>You can change any of these in iOS Settings → ReceiptSnap.</p>
 <h3>Is there a subscription?</h3>
 <p>No. ReceiptSnap is a one-time purchase. You own it. Future updates are included.</p>
 <h3>How do I rename old receipts after changing the filename pattern?</h3>
-<p>Settings → File Naming → change the preset → tap <strong>Yes, rename existing</strong> when prompted. ReceiptSnap will run through your archive and re-name every file using the new pattern. An audit log is saved alongside your receipts so you can see exactly what was renamed.</p>
+<p>Tap the gear icon, choose a new pattern under <strong>Filename pattern</strong>, then tap <strong>Yes, rename existing</strong> when prompted. ReceiptSnap will run through your archive and re-name your files using the new pattern. It also keeps a log of the old and new names, in a hidden folder next to your receipts.</p>
 <h3>Can I write my own filename pattern?</h3>
-<p>Yes. Settings → File Naming → choose <strong>Custom</strong> → use tokens like <code>{date}</code>, <code>{vendor}</code>, <code>{amount}</code>, <code>{currency}</code>, <code>{category}</code> in the order you want. The preview updates live.</p>
+<p>Yes. Tap the gear icon, choose <strong>Custom…</strong> under <strong>Filename pattern</strong>, then use tokens like <code>{date}</code>, <code>{vendor}</code>, <code>{amount}</code>, <code>{currency}</code>, <code>{category}</code> in the order you want. The preview updates live.</p>
 <h3>What about iPad?</h3>
 <p>The app supports iPad. If you have any feedback on the iPad layout, email us — iPhone is currently the primary surface.</p>
 <h3>I lost my data after reinstalling. Can you help?</h3>
-<p>If you deleted the app, iOS removed its data. The only way to recover is from an iCloud or Finder/iTunes backup taken before the deletion. Because we don't have a server, we can't restore your archive remotely — that's the trade-off for keeping everything private.</p>
+<p>If you deleted the app, iOS removed its data. The only way to recover is from an iCloud or Finder/iTunes backup taken before the deletion. If you had picked a save folder, the receipt images in it are still there, but the app can't rebuild its list from them. Because we don't have a server, we can't restore your archive for you. That's the trade-off for never sending your receipts to us.</p>
 <h3>Is there a Mac, Android, or web version?</h3>
-<p>Not at this time. iPhone (and iPad) only.</p>
+<p>ReceiptSnap is also on Google Play for Android. There is no web version and no separate Mac app. The answers on this page are for the iPhone and iPad app.</p>
 <hr />
 <h2>Reporting a bug</h2>
 <p>Email <strong>ben.lewis@roamhpu.co</strong> with:</p>
@@ -84,7 +91,7 @@ blockquote { border-left: 3px solid var(--rule); margin: 16px 0; padding: 4px 16
 <li>What you expected to happen.</li>
 <li>What actually happened.</li>
 <li>Your iOS version and iPhone model (Settings → General → About).</li>
-<li>The ReceiptSnap version (Settings → File Naming → bottom of the page, when implemented; otherwise just say "latest").</li>
+<li>The ReceiptSnap version if you know it, or just say "latest".</li>
 </ol>
 <p>If a particular receipt is mis-parsed, attach the image (or a redacted copy). We treat every report as a chance to make the OCR smarter.</p>
 <h2>Feature requests</h2>

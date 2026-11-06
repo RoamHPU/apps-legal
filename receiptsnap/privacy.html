@@ -46,9 +46,12 @@ blockquote { border-left: 3px solid var(--rule); margin: 16px 0; padding: 4px 16
 <nav class="crumbs"><a href="/apps-legal/">Roam HPU Apps — Legal</a></nav>
 <h1>Privacy Policy — ReceiptSnap by Roam</h1>
 <p><strong>Effective date:</strong> 2026-05-02
-<strong>Last updated:</strong> 2026-05-02</p>
+<strong>Last updated:</strong> 2026-11-06</p>
+<blockquote>
+<p><strong>Corrected on 6 November 2026.</strong> We corrected this page to describe the save folder you can pick in the app's Settings, the copy of each receipt's details kept inside its image, the exchange-rate download and the location lookup. We also changed how we will tell you about future changes (section 8). What the app collects has not changed: it still sends us none of your data.</p>
+</blockquote>
 <p>This is the privacy policy for <strong>ReceiptSnap by Roam</strong> ("ReceiptSnap", "we", "us"), an iPhone application published by Roam HPU.</p>
-<p>The short version: <strong>we do not collect any personal data.</strong> ReceiptSnap runs entirely on your device. There is no ReceiptSnap account, no ReceiptSnap server, no analytics SDK, and no advertising network embedded in the app. Receipt images and the metadata extracted from them stay on your device.</p>
+<p>The short version: <strong>we do not collect any personal data.</strong> There is no ReceiptSnap account, no ReceiptSnap server, no analytics SDK, and no advertising network embedded in the app. ReceiptSnap never uploads your receipts. Receipt records stay on your iPhone, and in your iCloud Backup if it's on. So do receipt images, unless you pick a save folder in the app's Settings, such as one in iCloud Drive. The app does download a public exchange-rate file, and if you allow location, it asks Apple which country you are in. Both are explained below.</p>
 <p>The rest of this document explains that in detail.</p>
 <h2>1. Information we do not collect</h2>
 <p>We do not collect, transmit, store, sell, or share any of the following:</p>
@@ -58,20 +61,23 @@ blockquote { border-left: 3px solid var(--rule); margin: 16px 0; padding: 4px 16
 <li>Receipt images, transaction amounts, vendor names, or any other content you create or capture in the app</li>
 <li>Photos from your photo library beyond the moment you choose to import a receipt</li>
 <li>Camera frames beyond the moment you capture a receipt</li>
-<li>Location data beyond the in-memory coordinate used by the local-currency suggestion</li>
+<li>Location data, apart from the location the app sends to Apple to find your country (see section 3)</li>
 <li>Device identifiers (IDFA, IDFV, advertising IDs)</li>
 <li>Crash reports, analytics events, telemetry, usage statistics</li>
 <li>Diagnostic logs</li>
 </ul>
-<p>There is no remote endpoint that ReceiptSnap connects to for any of the above.</p>
-<h2>2. Information that stays on your device</h2>
-<p>ReceiptSnap creates and stores the following information <strong>on your iPhone, in your private app storage</strong>, and does not transmit it elsewhere:</p>
+<p>ReceiptSnap sends none of the above to us, because there is no ReceiptSnap server. It never uploads your receipts. While you confirm a receipt, it may download the European Central Bank's public exchange-rate file for a currency estimate. The request carries none of your receipts or their details. Like any web request, it shows the European Central Bank your internet (IP) address, the time, and basic technical details such as the app's name and version. If you allow location, the app also sends your location to Apple's geocoding service to work out which country you are in (see section 3).</p>
+<p>If you have turned on Share With App Developers in iOS Settings, Apple may share crash data and statistics about how you use the app with us, under Apple's own privacy policy.</p>
+<h2>2. Information the app stores, and where</h2>
+<p>ReceiptSnap creates and stores the following information, and never sends any of it to us:</p>
 <ul>
-<li><strong>Receipt images</strong> — saved to the application's storage directory.</li>
-<li><strong>Receipt metadata</strong> — date, vendor, amount, currency, description, category, filename — saved in the app's local SwiftData store.</li>
-<li><strong>Settings</strong> — your filename pattern preference, save location, and other preferences — saved in standard <code>UserDefaults</code>.</li>
+<li><strong>Receipt images</strong>: saved in the app's private storage, or in the save folder you pick (see below).</li>
+<li><strong>Receipt metadata</strong>: the date, vendor, amount, currency, GST, ABN, description, category, tags, filename and similar details, saved in the app's local SwiftData store.</li>
+<li><strong>Settings</strong>: your filename pattern preference, save location and other preferences, saved in standard <code>UserDefaults</code>.</li>
 </ul>
-<p>If you have iCloud Backup enabled for your iPhone in iOS Settings, this data may be included in your iCloud Backup, which is governed by Apple's iCloud terms and privacy policy. ReceiptSnap itself does not use iCloud, CloudKit, or any other sync service.</p>
+<p>By default, receipt images are kept on your iPhone, in the app's private storage, which the Files app can't show. If you have iCloud Backup enabled for your iPhone in iOS Settings, this data may be included in your iCloud Backup, which is governed by Apple's iCloud terms and privacy policy.</p>
+<p>ReceiptSnap has no iCloud or CloudKit sync of its own. If you pick a save folder in the app's Settings, for example in iCloud Drive, your receipt images are saved there. So is a log of any bulk renames (old and new file names). That service stores and syncs them under its own terms. When you pick a folder, ReceiptSnap copies the receipt images kept in its private storage into it, and keeps those originals. Each time the app starts, it copies in any of those originals that the folder is missing. Images in a folder you picked before are not copied.</p>
+<p>Each image also carries a copy of the details you saved it with, inside the file. These include the vendor, date, amount, GST, ABN, category and tags, whether you marked it personal or business and tax-deductible, your time zone, and your iPhone's language and region setting. They go wherever the file goes, and anyone you give the file to can read them with common photo tools. This can't be switched off, and editing the receipt later doesn't update the copy. If you turn on <strong>Stamp QR with metadata</strong> in the app's Settings, most of these details are also stamped on the image as a QR code. Receipt records and settings stay on your iPhone.</p>
 <h2>3. Permissions we ask for and why</h2>
 <table>
 <thead>
@@ -84,8 +90,8 @@ blockquote { border-left: 3px solid var(--rule); margin: 16px 0; padding: 4px 16
 <tbody>
 <tr>
 <td><strong>Camera</strong></td>
-<td>To capture a paper receipt when you tap "Add receipt".</td>
-<td>We pass the image to Apple's on-device Vision framework for OCR, then save the image and extracted text on your device. We do not transmit the image.</td>
+<td>To capture a paper receipt when you tap the camera button.</td>
+<td>We pass the image to Apple's on-device Vision framework for OCR. The image is then saved in the app's private storage on your iPhone, or in the save folder you pick, such as one in iCloud Drive (see section 2). ReceiptSnap never uploads the image, but a folder in a service such as iCloud Drive is synced by that service.</td>
 </tr>
 <tr>
 <td><strong>Photos</strong></td>
@@ -94,8 +100,8 @@ blockquote { border-left: 3px solid var(--rule); margin: 16px 0; padding: 4px 16
 </tr>
 <tr>
 <td><strong>Location (when in use, optional)</strong></td>
-<td>To suggest a local currency when you save a receipt (e.g. AUD in Australia).</td>
-<td>We use a coarse one-shot location read, derive a currency code, cache that code locally, and discard the coordinate. Location is never transmitted. You can deny this and pick the currency manually with no loss of functionality.</td>
+<td>To suggest a local currency (for example AUD in Australia) when you open the currency list while confirming or editing a receipt.</td>
+<td>If you allow it, the app asks iOS for your location each time you open the currency list, and when you pull down to refresh it. It sends the location to Apple's geocoding service, which tells the app which country you are in. The app asks for about 1 km accuracy, but iOS may give a more precise location. The app keeps only the country and currency codes and the time it looked, and discards the location. Your location never reaches us; Apple handles the lookup under its own privacy policy. You can turn off Precise Location for ReceiptSnap in iOS Settings, or deny location and pick the currency yourself. Everything else works the same.</td>
 </tr>
 </tbody>
 </table>
@@ -116,16 +122,18 @@ blockquote { border-left: 3px solid var(--rule); margin: 16px 0; padding: 4px 16
 <li>A/B testing SDKs</li>
 <li>Social network SDKs</li>
 </ul>
-<p>ReceiptSnap uses Apple's first-party frameworks (Vision, SwiftUI, SwiftData, CoreLocation, Foundation) which run on your device. These are governed by Apple's privacy policy, not ours.</p>
+<p>ReceiptSnap uses Apple's first-party frameworks (Vision, SwiftUI, SwiftData, CoreLocation, StoreKit, Translation, Foundation). They run on your device, with three exceptions: the exchange-rate download (section 1), the country lookup that Apple's geocoding service answers (section 3), and StoreKit asking the App Store for purchase details. If you tap Translate, Apple's translation feature handles the text, and it may first download a language from Apple. Apple's frameworks are governed by Apple's privacy policy, not ours.</p>
+<p>The exchange-rate file comes from the European Central Bank. The app sends it none of your receipts or their details (see section 1).</p>
 <h2>6. Children</h2>
-<p>ReceiptSnap is rated 4+ and is suitable for general audiences. We do not knowingly collect data from children — because we do not collect data from anyone.</p>
+<p>ReceiptSnap is rated 4+ and is suitable for general audiences. We do not knowingly collect data from children, because the app collects no data from anyone.</p>
 <h2>7. Your rights</h2>
-<p>Because no personal data leaves your device, there is no copy of your data we hold to provide, correct, or delete. The data lives on your iPhone and is yours.</p>
-<p>To delete all ReceiptSnap data: delete the app from your iPhone. iOS removes the app's storage along with it.</p>
-<p>To export your data: use your iCloud Backup or iTunes/Finder backup; or use the in-app export feature when available.</p>
+<p>Because the app sends us none of your data, there is no copy we hold to provide, correct, or delete. Your receipts and records stay on your iPhone, or in the folder you chose, and they are yours.</p>
+<p>To delete ReceiptSnap's data, delete the app from your iPhone. Deleting the app removes the files kept in its own folder, along with your receipt records and settings. Files in a folder you chose, such as one in iCloud Drive, stay there until you delete them.</p>
+<p>To export your data, export a BAS quarter or a financial year as a ZIP (the box icon at the top of the home screen). Or pick a save folder in the app's Settings, so your receipt images are saved as files you can open.</p>
+<p>If you email us, we receive your email address, your message and anything you attach. Please black out anything sensitive before you attach a receipt image.</p>
 <p>If you have a question about your data, email <strong>ben.lewis@roamhpu.co</strong>.</p>
 <h2>8. Changes to this policy</h2>
-<p>If we ever change what ReceiptSnap collects, we will update this page and the effective date at the top, and we will surface the change in-app at next launch. We do not anticipate changing this policy, because the design intent is to keep collecting nothing.</p>
+<p>If we ever change what ReceiptSnap collects, we will update this page and the effective date at the top, and post a dated note at the top of the support page. Once the app can show notices, we will show it in the app too. We do not anticipate changing this policy, because the design intent is to keep collecting nothing.</p>
 <h2>9. Contact</h2>
 <p>Roam HPU
 ben.lewis@roamhpu.co</p>

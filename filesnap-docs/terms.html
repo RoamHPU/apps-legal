@@ -46,7 +46,10 @@ blockquote { border-left: 3px solid var(--rule); margin: 16px 0; padding: 4px 16
 <nav class="crumbs"><a href="/apps-legal/">Roam HPU Apps — Legal</a></nav>
 <h1>Terms of Use — FileSnap Docs by Roam</h1>
 <p><strong>Effective date:</strong> 2026-05-02
-<strong>Last updated:</strong> 2026-05-02</p>
+<strong>Last updated:</strong> 2026-11-06</p>
+<blockquote>
+<p><strong>Corrected on 6 November 2026.</strong> We corrected the descriptions of where your documents are stored, where expiry reminders go and how the encrypted export works, and replaced a placeholder with the address of our Privacy Policy. The licence and the other terms have not changed.</p>
+</blockquote>
 <p>These are the Terms of Use ("Terms") for the iPhone application <strong>FileSnap Docs by Roam</strong> ("the App"), published by Roam HPU ("we", "us"). Please read them. By installing or using the App you agree to them.</p>
 <h2>Note on the Apple Standard EULA</h2>
 <p>Apple applies its <strong>Standard End User License Agreement</strong> to apps downloaded from the App Store unless the developer provides a custom EULA. Apple's Standard EULA is published at:</p>
@@ -64,14 +67,14 @@ blockquote { border-left: 3px solid var(--rule); margin: 16px 0; padding: 4px 16
 <ul>
 <li>A right to sublicense, sell, rent, lease, lend, or redistribute the App.</li>
 <li>Any right to reverse-engineer, decompile, or disassemble the App, except to the extent permitted by applicable law.</li>
-<li>Any cloud service, account, sync, or backup operated by Roam HPU. FileSnap Docs is on-device only — your documents and data are stored on your iPhone (and in your iCloud Backup if you have that enabled in iOS Settings).</li>
+<li>Any cloud service, account, sync, or backup operated by Roam HPU. FileSnap Docs has no server. Your documents and data are stored on your iPhone (and in your iCloud Backup if you have that enabled in iOS Settings). If you pick a save folder in the App's Settings, such as one in iCloud Drive, your scans and encrypted exports are saved there, and that service's own terms apply to them.</li>
 <li>Any guarantee that OCR-extracted fields (issuer, type, date, expiry, etc.) are accurate. See §5 below.</li>
 <li>Any financial, tax, accounting, legal, or medical advice. See §5.</li>
 </ul>
 <h2>4. Your data and privacy</h2>
-<p>FileSnap Docs does not collect, transmit, or store your data on our servers — because we do not have servers. Document images, OCR transcripts, metadata, and reminders stay on your device. The full statement is in our Privacy Policy:</p>
-<p>(URL to be added — <code>store/privacy-policy.md</code> to be hosted at the agreed URL)</p>
-<p>You are responsible for backing up your documents. If you delete the App, iOS removes the App's data along with it. If you do not have iCloud Backup enabled, the data is gone. Roam HPU cannot recover it.</p>
+<p>FileSnap Docs does not collect, transmit, or store your data on our servers, because we do not have servers. Document records and their text stay on your iPhone. Your scans stay there too, unless you pick a save folder in the App's Settings. Each scan carries a copy of its details, so they go wherever the scan goes. Expiry reminders go into your default calendar. The full statement is in our Privacy Policy:</p>
+<p><a href="https://roamhpu.github.io/apps-legal/filesnap-docs/privacy.html">https://roamhpu.github.io/apps-legal/filesnap-docs/privacy.html</a></p>
+<p>You are responsible for backing up your documents. If you delete the App, iOS removes the App's data along with it. Scans in a save folder you picked stay in that folder, but the App cannot rebuild its list from them. If you do not have iCloud Backup enabled, the App's data is gone. Roam HPU cannot recover it.</p>
 <h2>5. No warranty on output. Not professional advice.</h2>
 <p>The App uses on-device optical character recognition (OCR) to extract fields (issuer, document type, date, expiry, etc.) from document images. OCR is imperfect. Crumpled, faded, low-light, or unusually formatted documents can be misread. <strong>You are responsible for reviewing every document before relying on it for any tax, legal, medical, accounting, regulatory, or warranty purpose.</strong> The App's "Confirm" screen is provided so you can correct misreads before saving.</p>
 <p>FileSnap Docs is a utility for organising your own documents. It is <strong>not</strong> financial advice, tax advice, accounting software, legal advice, or medical advice. It does not replace professional review for tax filing, legal disputes, medical decisions, or regulatory compliance. If you need professional advice, consult a qualified professional in the relevant field.</p>
@@ -79,11 +82,11 @@ blockquote { border-left: 3px solid var(--rule); margin: 16px 0; padding: 4px 16
 <h2>6. Encrypted export feature</h2>
 <p>The App offers an encrypted ZIP export feature ("Encrypted Export"). When you use Encrypted Export:</p>
 <ul>
-<li>The encryption is performed on your device using an industry-standard symmetric cipher (AES-256-GCM as of v1.0).</li>
+<li>The encryption is performed on your device. Each file in the export is encrypted with AES-256, using the standard WinZip AES method, so the export opens with the password in common zip tools that support it.</li>
 <li>You choose the password. <strong>We do not see, transmit, store, or have any way to recover your password.</strong></li>
-<li>The resulting <code>.zip.enc</code> bundle is yours to share by any method you choose. Whoever you share it with also needs the password.</li>
-<li><strong>If you forget the password, the bundle cannot be recovered by us, by Apple, or by any third party.</strong> That is the design.</li>
-<li>The v1.0 bundle format is FileSnap Docs–specific (the <code>.zip.enc</code> extension reflects that). A future update will add interoperability with standard PKZIP AES-256 tools. Until then, the bundle is openable only by FileSnap Docs.</li>
+<li>The resulting <code>.zip</code> file is saved in your save folder and is yours to share by any method you choose. Whoever you share it with also needs the password.</li>
+<li>The names of the files and folders inside the <code>.zip</code>, which include your document titles, are not encrypted. Anyone with the file can read them without the password.</li>
+<li><strong>If you forget the password, we cannot recover the encrypted contents, and neither can Apple.</strong> That is the design. A short password is easier to guess, so use a long one.</li>
 </ul>
 <p>You agree that you will not use Encrypted Export to share content you do not have the right to share, and that you will not use it in violation of any export-control or sanctions law applicable to you.</p>
 <h2>7. Intellectual property</h2>

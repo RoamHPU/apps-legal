@@ -45,14 +45,23 @@ blockquote { border-left: 3px solid var(--rule); margin: 16px 0; padding: 4px 16
 <main>
 <nav class="crumbs"><a href="/apps-legal/">Roam HPU Apps — Legal</a></nav>
 <h1>FileSnap Docs by Roam — Support</h1>
+<p><strong>Last updated:</strong> 2026-11-06</p>
+<blockquote>
+<p><strong>Updated 6 November 2026.</strong> We corrected our <a href="privacy.html">Privacy Policy</a> and <a href="terms.html">Terms of Use</a>. Both now explain the save folder you can pick in the app's Settings, such as one in iCloud Drive, that expiry reminders go into your default calendar, and how the encrypted export works. The Privacy Policy also explains the copy of each scan's details kept inside its file, and what the app adds to iPhone search. What the app collects has not changed: it still sends us none of your data. Several answers below have changed too, including where documents go, the encrypted export, internet use, reinstalling and other versions.</p>
+</blockquote>
 <p>A short page. We're a small team, and FileSnap Docs is designed to be the kind of app you don't need much support for. If something's wrong, email us — we read every message.</p>
 <p><strong>Contact:</strong> ben.lewis@roamhpu.co</p>
 <hr />
 <h2>Common questions</h2>
 <h3>Where do my documents go?</h3>
-<p>They live on your iPhone, in FileSnap Docs's private app storage. They are not uploaded anywhere — there is no FileSnap Docs server. If you have iCloud Backup enabled in iOS Settings, your documents are included in that backup along with the rest of your phone's data.</p>
+<p>By default they're saved on your iPhone, in FileSnap Docs's private app storage, which the Files app can't show. There is no FileSnap Docs server, and the app never uploads your documents. If you have iCloud Backup enabled in iOS Settings, your documents are included in that backup along with the rest of your phone's data.</p>
+<p>To keep the files somewhere you can open them, such as iCloud Drive, tap the gear icon at the top right, then <strong>Save location</strong> → <strong>Choose folder…</strong>, and pick a folder. New scans and encrypted exports are saved there. The document list, its details and the text used for search stay on your iPhone, in the app and in iPhone search, and don't sync to your other devices. Each scan also carries a copy of the details it was saved with.</p>
+<p>Pick the folder before your first scan if you can. Changing it later leaves earlier PDFs and exports where they were, and the app shows those PDFs as missing until you go back to where they were saved. JPG scans kept in private storage are copied to a newly picked folder, but scans in a folder you picked before are not. <strong>Reset to default (private)</strong> copies nothing back, so scans saved in a folder show as missing until you pick that folder again. Nothing is deleted.</p>
+<p>Deleting a document deletes its files only where the app is saving now, and copies elsewhere stay. If a document shows as missing, go back to where it was saved before you delete it.</p>
+<p>If the folder is renamed, moved or deleted, the app can lose track of it. It then goes back to saving in private storage, without telling you, and shows scans saved in the folder as missing until you pick the folder again. When this has happened, Settings shows <strong>Private (App-only)</strong> as the save location.</p>
 <h3>How do I move my documents to my computer?</h3>
 <p>Tap a document → tap the share button (top right) to share it via AirDrop, Mail, the Files app, or any other share-target. For a batch, use the toolbar export button on the home screen — multi-select documents, set a password, and you'll get an encrypted ZIP bundle to share.</p>
+<p>You can also pick a save folder, for example in iCloud Drive (see "Where do my documents go?"), so new scans are saved as files you can open in the Files app.</p>
 <h3>Why does the OCR sometimes get the issuer or type wrong?</h3>
 <p>OCR on photos of paper documents is hard. Crumpled, faded, low-light, or unusually formatted documents can be misread. The Confirm screen lets you correct any field before saving — your edit replaces the auto-detection. If a particular issuer is consistently misread (a government department, a recurring insurer), email us a sample and we'll improve it.</p>
 <h3>Can I scan multi-page documents?</h3>
@@ -67,21 +76,21 @@ blockquote { border-left: 3px solid var(--rule); margin: 16px 0; padding: 4px 16
 <li>Enter a password (twice).</li>
 <li>Tap Export.</li>
 </ol>
-<p>You get a <code>.zip.enc</code> bundle. The recipient needs FileSnap Docs (or, in a future update, a standard ZIP-compatible AES tool) and the password to decrypt it. <strong>We don't see the password and we can't recover it.</strong> If you forget it, the bundle is unrecoverable.</p>
+<p>You get a standard encrypted <code>.zip</code> file. The app saves it in your save folder and opens the share sheet so you can send it. The recipient can open it with the password in a zip tool that supports AES encryption, such as 7-Zip, Keka or The Unarchiver. The names of the files and folders inside aren't encrypted, so anyone with the file can see your document titles. Use a long password. <strong>We don't see the password and we can't recover it.</strong> If you forget it, the files inside can't be opened.</p>
 <h3>Does FileSnap Docs need an internet connection?</h3>
-<p>No. Everything happens on your iPhone. Airplane mode is fine.</p>
+<p>No. Scanning, text recognition and saving to your iPhone all work without a connection. Aeroplane mode is fine.</p>
 <h3>Is there a subscription?</h3>
 <p>No. FileSnap Docs is a one-time purchase. You own it. Future updates are included.</p>
 <h3>How do I rename existing documents after changing the filename pattern?</h3>
-<p>Settings → File Naming → change the preset → tap <strong>Yes, rename existing</strong> when prompted. FileSnap Docs will run through your archive and re-name every file using the new pattern. An audit log is saved alongside your documents so you can see exactly what was renamed.</p>
+<p>Tap the gear icon, choose a new pattern under <strong>Filename pattern</strong>, then tap <strong>Yes, rename existing</strong> when prompted. FileSnap Docs will run through your archive and re-name your files using the new pattern. It also keeps a log of the old and new names, in a hidden folder next to your documents.</p>
 <h3>Can I write my own filename pattern?</h3>
-<p>Yes. Settings → File Naming → choose <strong>Custom</strong> → use tokens like <code>{date}</code>, <code>{issuer}</code>, <code>{title}</code>, <code>{type}</code>, <code>{tags}</code> in the order you want.</p>
+<p>Yes. Tap the gear icon, choose <strong>Custom…</strong> under <strong>Filename pattern</strong>, then use tokens like <code>{date}</code>, <code>{vendor}</code> (the issuer), <code>{title}</code>, <code>{type}</code>, <code>{tags}</code> in the order you want.</p>
 <h3>What about iPad?</h3>
 <p>The app supports iPad. iPhone is currently the primary surface; if you have iPad-specific feedback, email us.</p>
 <h3>I lost my data after reinstalling. Can you help?</h3>
-<p>If you deleted the app, iOS removed its data. The only way to recover is from an iCloud or Finder/iTunes backup taken before the deletion. Because we don't have a server, we can't restore your archive remotely — that's the trade-off for keeping everything private.</p>
+<p>If you deleted the app, iOS removed its data. The only way to recover is from an iCloud or Finder/iTunes backup taken before the deletion. If you had picked a save folder, the scans in it are still there, but the app can't rebuild its list from them. You can bring a scan back in as a new document with <strong>Add Document</strong> → <strong>Open File</strong>; the app reads it again, so check the details before you save. Because we don't have a server, we can't restore your archive for you. That's the trade-off for never sending your documents to us.</p>
 <h3>Is there a Mac, Android, or web version?</h3>
-<p>Not at this time. iPhone (and iPad) only.</p>
+<p>FileSnap Docs is also on Google Play for Android. There is no web version and no separate Mac app. The answers on this page are for the iPhone and iPad app.</p>
 <hr />
 <h2>Reporting a bug</h2>
 <p>Email <strong>ben.lewis@roamhpu.co</strong> with:</p>
@@ -90,7 +99,7 @@ blockquote { border-left: 3px solid var(--rule); margin: 16px 0; padding: 4px 16
 <li>What you expected to happen.</li>
 <li>What actually happened.</li>
 <li>Your iOS version and iPhone model (Settings → General → About).</li>
-<li>The FileSnap Docs version (Settings → bottom of the page, when implemented; otherwise just say "latest").</li>
+<li>The FileSnap Docs version if you know it, or just say "latest".</li>
 </ol>
 <p>If a particular document is mis-parsed, attach a redacted copy. We treat every report as a chance to make the OCR smarter.</p>
 <h2>Feature requests</h2>

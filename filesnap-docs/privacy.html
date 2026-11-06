@@ -46,9 +46,12 @@ blockquote { border-left: 3px solid var(--rule); margin: 16px 0; padding: 4px 16
 <nav class="crumbs"><a href="/apps-legal/">Roam HPU Apps — Legal</a></nav>
 <h1>Privacy Policy — FileSnap Docs by Roam</h1>
 <p><strong>Effective date:</strong> 2026-05-02
-<strong>Last updated:</strong> 2026-05-02</p>
+<strong>Last updated:</strong> 2026-11-06</p>
+<blockquote>
+<p><strong>Corrected on 6 November 2026.</strong> We corrected this page to describe the save folder you can pick in the app's Settings, the copy of each scan's details kept inside its file, expiry reminders, iPhone search and the encrypted export. We also changed how we will tell you about future changes (section 9). What the app collects has not changed: it still sends us none of your data.</p>
+</blockquote>
 <p>This is the privacy policy for <strong>FileSnap Docs by Roam</strong> ("FileSnap Docs", "we", "us"), an iPhone application published by Roam HPU.</p>
-<p>The short version: <strong>we do not collect any personal data.</strong> FileSnap Docs runs entirely on your device. There is no FileSnap Docs account, no FileSnap Docs server, no analytics SDK, and no advertising network embedded in the app. Document images, OCR transcripts, metadata, and any reminders you create stay on your device.</p>
+<p>The short version: <strong>we do not collect any personal data.</strong> FileSnap Docs scans and reads your documents on your iPhone, and never uploads them. There is no FileSnap Docs account, no FileSnap Docs server, no analytics SDK, and no advertising network embedded in the app. Document records and their text stay on your iPhone, and in your iCloud Backup if it's on. So do your scans, unless you pick a save folder in the app's Settings, such as one in iCloud Drive. Any expiry reminder you add goes into your default calendar, with the document's title, type and expiry date, and syncs wherever that calendar does.</p>
 <p>The rest of this document explains that in detail.</p>
 <h2>1. Information we do not collect</h2>
 <p>We do not collect, transmit, store, sell, or share any of the following:</p>
@@ -64,15 +67,19 @@ blockquote { border-left: 3px solid var(--rule); margin: 16px 0; padding: 4px 16
 <li>Diagnostic logs</li>
 </ul>
 <p>There is no remote endpoint that FileSnap Docs connects to for any of the above.</p>
-<h2>2. Information that stays on your device</h2>
-<p>FileSnap Docs creates and stores the following information <strong>on your iPhone, in the application's private storage</strong>, and does not transmit it elsewhere:</p>
+<p>If you have turned on Share With App Developers in iOS Settings, Apple may share crash data and statistics about how you use the app with us, under Apple's own privacy policy.</p>
+<h2>2. Information the app stores, and where</h2>
+<p>FileSnap Docs creates and stores the following information, and never sends any of it to us:</p>
 <ul>
-<li><strong>Document images and PDFs</strong> — saved to the application's storage directory.</li>
-<li><strong>Document metadata</strong> — title, issuer, type, date, expiry date, tags, notes, OCR transcript, page count, and file format — saved in the app's local SwiftData store.</li>
-<li><strong>Settings</strong> — your filename pattern preference, save location, and other preferences — saved in standard <code>UserDefaults</code>.</li>
-<li><strong>Calendar events (optional)</strong> — when you opt in to an expiry reminder, FileSnap Docs creates an event in your iOS Calendar via Apple's EventKit framework. The event lives in your calendar, not on our servers (we don't have any).</li>
+<li><strong>Document images and PDFs</strong>: saved in the app's private storage, or in the save folder you pick (see below).</li>
+<li><strong>Document metadata</strong>: title, issuer, type, date, expiry date, tags, notes, OCR transcript, page count and file format, saved in the app's local SwiftData store.</li>
+<li><strong>Settings</strong>: your filename pattern preference, save location and other preferences, saved in standard <code>UserDefaults</code>.</li>
+<li><strong>Calendar events (optional)</strong>: when you opt in to an expiry reminder, FileSnap Docs creates an event in your iOS Calendar via Apple's EventKit framework. The event lives in your calendar, not on our servers (we don't have any).</li>
+<li><strong>iPhone search index</strong>: so you can find documents from iPhone search, the app adds each document's title, type, issuer, tags and dates to your iPhone's search index. It also adds whether you marked it personal, business or tax-deductible, the first 500 characters of its text and a small preview of its first page. The app removes a document's entry when you delete the document. To stop this, turn off Show Content in Search for FileSnap Docs in iOS Settings.</li>
 </ul>
-<p>If you have iCloud Backup enabled for your iPhone in iOS Settings, this data may be included in your iCloud Backup, which is governed by Apple's iCloud terms and privacy policy. FileSnap Docs itself does not use iCloud, CloudKit, or any other sync service.</p>
+<p>By default, your scans are kept on your iPhone, in the app's private storage, which the Files app can't show. If you have iCloud Backup enabled for your iPhone in iOS Settings, this data may be included in your iCloud Backup, which is governed by Apple's iCloud terms and privacy policy.</p>
+<p>FileSnap Docs has no iCloud or CloudKit sync of its own. If you pick a save folder in the app's Settings, for example in iCloud Drive, your scans are saved there. So are your encrypted exports and a log of any bulk renames (old and new file names). That service stores and syncs them under its own terms. When you pick a folder, JPG scans kept in private storage are copied into it. PDFs, exports and anything in a folder you picked before stay where they were.</p>
+<p>Each scan also carries a copy of the details you saved it with, inside the file. These include its title, issuer, type, dates and tags, whether you marked it personal or business and tax-deductible, and your iPhone's language and region setting. They go wherever the file goes, and anyone you give the file to can read them with common photo or PDF tools. This can't be switched off, and editing the document later doesn't update the copy. If you turn on <strong>Stamp QR with metadata</strong> in the app's Settings, the same details are also stamped on the first page as a QR code. Document records, their text and your settings stay on your iPhone.</p>
 <h2>3. Permissions we ask for and why</h2>
 <table>
 <thead>
@@ -85,8 +92,8 @@ blockquote { border-left: 3px solid var(--rule); margin: 16px 0; padding: 4px 16
 <tbody>
 <tr>
 <td><strong>Camera</strong></td>
-<td>To capture a document when you tap "Scan Document".</td>
-<td>We pass each captured page to Apple's on-device Vision framework for OCR, then save the image and extracted text on your device. We do not transmit the image.</td>
+<td>To capture a document when you tap "Add Document", then "Take Photo".</td>
+<td>We pass each captured page to Apple's on-device Vision framework for OCR. The scan is then saved in the app's private storage on your iPhone, or in the save folder you pick, such as one in iCloud Drive (see section 2). FileSnap Docs never uploads the scan, but a folder in a service such as iCloud Drive is synced by that service.</td>
 </tr>
 <tr>
 <td><strong>Photos</strong></td>
@@ -96,7 +103,7 @@ blockquote { border-left: 3px solid var(--rule); margin: 16px 0; padding: 4px 16
 <tr>
 <td><strong>Calendar (optional)</strong></td>
 <td>To create an expiry reminder when you ask for one.</td>
-<td>We create a single calendar event at the date and time you choose. We do not read other calendar events, contacts, or invitee data.</td>
+<td>We add one all-day event to your default calendar, 7, 14 or 30 days before the expiry date (you choose), with an alert at 9 am. It shows the document's title, type and expiry date. iOS asks for full calendar access. We use it only to add that event, and to remove it if you remove the reminder or delete the document. We do not read your other events, contacts or invitees. If other people can see that calendar, such as a shared family or work calendar, they can see the reminder too.</td>
 </tr>
 </tbody>
 </table>
@@ -113,7 +120,9 @@ blockquote { border-left: 3px solid var(--rule); margin: 16px 0; padding: 4px 16
 <ul>
 <li>The encryption happens on your device.</li>
 <li>The password you choose is <strong>not</strong> transmitted, stored, or known to us. We never see it. If you forget it, we cannot recover it.</li>
-<li>The resulting <code>.zip.enc</code> bundle contains your encrypted documents and is shared via the iOS share sheet — where it goes (email, Files app, AirDrop, third-party app) is up to you.</li>
+<li>The result is a standard <code>.zip</code> file. Each file inside it is encrypted with AES-256, using the WinZip AES method.</li>
+<li>The names of the files and folders inside it are not encrypted. They include your document titles, so anyone with the <code>.zip</code> can read them without the password.</li>
+<li>The <code>.zip</code> is saved in your save folder, and stays there after you share it. In the app's private storage, it stays until you delete the app. You share it with the iOS share sheet, and where it goes (email, Files app, AirDrop, third-party app) is up to you.</li>
 </ul>
 <h2>6. Third parties</h2>
 <p>FileSnap Docs does not embed:</p>
@@ -124,16 +133,17 @@ blockquote { border-left: 3px solid var(--rule); margin: 16px 0; padding: 4px 16
 <li>A/B testing SDKs</li>
 <li>Social network SDKs</li>
 </ul>
-<p>FileSnap Docs uses Apple's first-party frameworks (Vision, SwiftUI, SwiftData, PDFKit, EventKit, Foundation) which run on your device. These are governed by Apple's privacy policy, not ours.</p>
+<p>FileSnap Docs uses Apple's first-party frameworks (Vision, SwiftUI, SwiftData, PDFKit, EventKit, Core Spotlight, StoreKit, Translation, Foundation). They run on your device, with two exceptions: StoreKit asks the App Store for purchase details, and an expiry reminder syncs wherever your calendar does. If you tap Translate, Apple's translation feature handles the text, and it may first download a language from Apple. Apple's frameworks are governed by Apple's privacy policy, not ours.</p>
 <h2>7. Children</h2>
-<p>FileSnap Docs is rated 4+ and is suitable for general audiences. We do not knowingly collect data from children — because we do not collect data from anyone.</p>
+<p>FileSnap Docs is rated 4+ and is suitable for general audiences. We do not knowingly collect data from children, because the app collects no data from anyone.</p>
 <h2>8. Your rights</h2>
-<p>Because no personal data leaves your device, there is no copy of your data we hold to provide, correct, or delete. The data lives on your iPhone and is yours.</p>
-<p>To delete all FileSnap Docs data: delete the app from your iPhone. iOS removes the app's storage along with it. Calendar events you created via expiry reminders remain in your iOS Calendar and can be deleted there separately.</p>
+<p>Because the app sends us none of your data, there is no copy we hold to provide, correct, or delete. Your documents and records stay on your iPhone, or in the folder you chose, and they are yours.</p>
+<p>To delete FileSnap Docs's data, delete the app from your iPhone. Deleting the app removes the files kept in its own folder, along with your document records and settings. Files in a folder you chose, such as one in iCloud Drive, stay there until you delete them. Calendar events you created via expiry reminders remain in your iOS Calendar and can be deleted there separately.</p>
 <p>To export your data: use FileSnap Docs's built-in share / export action, or restore an iCloud or Finder/iTunes backup to a new device.</p>
+<p>If you email us, we receive your email address, your message and anything you attach. Please black out anything sensitive before you attach a document.</p>
 <p>If you have a question about your data, email <strong>ben.lewis@roamhpu.co</strong>.</p>
 <h2>9. Changes to this policy</h2>
-<p>If we ever change what FileSnap Docs collects, we will update this page and the effective date at the top, and we will surface the change in-app at next launch. We do not anticipate changing this policy, because the design intent is to keep collecting nothing.</p>
+<p>If we ever change what FileSnap Docs collects, we will update this page and the effective date at the top, and post a dated note at the top of the support page. Once the app can show notices, we will show it in the app too. We do not anticipate changing this policy, because the design intent is to keep collecting nothing.</p>
 <h2>10. Contact</h2>
 <p>Roam HPU
 ben.lewis@roamhpu.co</p>
